@@ -7,6 +7,7 @@ import { cordOptions } from './cors-configuration.js';
 import { dbConnection } from './db.js';
 import usuariosRoutes from '../src/usuarios/usuarios.routes.js';
 import publicacionesRoutes from '../src/publicaciones/publicaciones.routes.js';
+import comentariosRoutes from '../src/comentarios/comentarios.routes.js';
 
 const BASE_URL = '/gestor-opiniones/v1';
 
@@ -21,6 +22,7 @@ const middlewares = (app) => {
 const routes = (app) => {
     app.use(`${BASE_URL}/usuarios`, usuariosRoutes);
     app.use(`${BASE_URL}/publicaciones`, publicacionesRoutes);
+    app.use(`${BASE_URL}/comentarios`, comentariosRoutes);
 };
 
 // Iniciar servidor
