@@ -1,0 +1,383 @@
+{
+  "info": {
+    "_postman_id": "87759e33-993e-4c2b-9eb8-3db9a00c3210",
+    "name": "REST API Gestion de opiniones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48339490",
+    "_collection_link": "https://go.postman.co/collection/48339490-87759e33-993e-4c2b-9eb8-3db9a00c3210?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"José\",\r\n  \"surname\": \"Martínez\",\r\n  \"dpi\": \"9876543210123\",\r\n  \"puesto\": \"CHEF\",\r\n  \"sueldo\": 3500,\r\n  \"status\": true\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post Users",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Alessandro Zacarias\",\r\n    \"email\": \"alessandrozac11@gmail.com\",\r\n    \"bio\": \"Me encanta programar\",\r\n    \"password\": \"secret_password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/usuario",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "usuario"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get UserById",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "PUT User",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/usuarios/69934e0eafd7233d631227e1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "usuarios",
+                "69934e0eafd7233d631227e1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Desactivar User",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/usuarios/69934e0eafd7233d631227e1/desactivar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "usuarios",
+                "69934e0eafd7233d631227e1",
+                "desactivar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Activar User",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/usuarios/69934e0eafd7233d631227e1/activar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "usuarios",
+                "69934e0eafd7233d631227e1",
+                "activar"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Publicaciones",
+      "item": [
+        {
+          "name": "Post Publicacion",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Mi primera publicación\",\r\n  \"content\": \"Este es el contenido de mi publicación en la plataforma.\",\r\n  \"idUsuario\": \"65d1f4b8c9a12e3f4a567890\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/publicaciones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "publicaciones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get publicaciones",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Mi primera publicación\",\r\n  \"content\": \"Este es el contenido de mi publicación en la plataforma.\",\r\n  \"idUsuario\": \"65d1f4b8c9a12e3f4a567890\"\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/publicaciones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "publicaciones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get publicacionById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Mi primera publicación\",\r\n  \"content\": \"Este es el contenido de mi publicación en la plataforma.\",\r\n  \"idUsuario\": \"65d1f4b8c9a12e3f4a567890\"\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/publicaciones/69935606d4f768e44a80e3c5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "publicaciones",
+                "69935606d4f768e44a80e3c5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Put publicacion",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Actualizacion de fortnite\",\r\n  \"content\": \"La nueva actualizacion de fortnite esta increible\",\r\n  \"idUsuario\": \"65d1f4b8c9a12e3f4a567890\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/publicaciones/69935606d4f768e44a80e3c5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "publicaciones",
+                "69935606d4f768e44a80e3c5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Desactivar Publicacion",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Actualizacion de fortnite\",\r\n  \"content\": \"La nueva actualizacion de fortnite esta increible\",\r\n  \"idUsuario\": \"65d1f4b8c9a12e3f4a567890\"\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/publicaciones/69935606d4f768e44a80e3c5/desactivar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "publicaciones",
+                "69935606d4f768e44a80e3c5",
+                "desactivar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Activar Publicacion",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Actualizacion de fortnite\",\r\n  \"content\": \"La nueva actualizacion de fortnite esta increible\",\r\n  \"idUsuario\": \"65d1f4b8c9a12e3f4a567890\"\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/publicaciones/69935606d4f768e44a80e3c5/activar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "publicaciones",
+                "69935606d4f768e44a80e3c5",
+                "activar"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comentarios",
+      "item": [
+        {
+          "name": "Post comentario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"content\": \"Excelente publicación, me pareció muy interesante.\",\r\n  \"idUsuario\": \"69934e0eafd7233d631227e1\",\r\n  \"idPublicacion\": \"69935606d4f768e44a80e3c5\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3001/gestor-opiniones/v1/comentarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "gestor-opiniones",
+                "v1",
+                "comentarios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Status Server",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/gestor-opiniones/v1/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "gestor-opiniones",
+            "v1",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
