@@ -105,6 +105,44 @@ export const getCommentById = async (req, res) => {
     } 
 }
 
+export const getCommentsByPublication = async (req, res) => {
+    try {
+        const { idPublicacion } = req.params;
+        const { page = 1, limit = 10 } = req.query;
+
+        const filter = {
+            idPublicacion,
+            isActive: true
+        };
+
+        const comments = await Comment.find(filter)
+            .skip((page - 1) * limit)
+            .limit(parseInt(limit))
+            .sort({ creationDate: -1 });
+
+        const total = await Comment.countDocuments(filter);
+
+        res.status(200).json({
+            status: 'success',
+            message: 'Comentarios obtenidos exitosamente',
+            data: comments,
+            pagination: {
+                currentPage: parseInt(page),
+                totalPages: Math.ceil(total / limit),
+                totalItems: total,
+                limit: parseInt(limit)
+            }
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            status: 'error',
+            message: 'Error al obtener comentarios por publicación',
+            error: error.message
+        });
+    }
+};
+
 export const updateComment = async (req, res) => {
     try {
         const { id } = req.params;

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { changeCommentStatus, createComment, getCommentById, getComments, updateComment } from './comentarios.controller.js';
+import { changeCommentStatus, createComment, getCommentById, getComments, getCommentsByPublication, updateComment } from './comentarios.controller.js';
 
 const router = Router();
 // Ruta para crear un nuevo comentario
@@ -12,5 +12,7 @@ router.put('/:id', updateComment);
 
 router.put('/:id/activar', changeCommentStatus);
 router.put('/:id/desactivar', changeCommentStatus);
+
+router.get('/publicacion/:idPublicacion', getCommentsByPublication);
 
 export default router;
